@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEGAFIBER NETWORKS - Payment Reminder</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f4f6fa;
+}
+
+.header {
+    background: #0a1f44;
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+}
+
+.header img {
+    max-width: 220px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    margin: 5px 0 0 0;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.container {
+    max-width: 650px;
+    margin: 40px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.notice {
+    background: #eef4ff;
+    border-left: 6px solid #1d4ed8;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.payment-box {
+    background: #f9fafc;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #e3e8f0;
+}
+
+.payment-box h2 {
+    margin-top: 0;
+    color: #0c3780;
+}
+
+.qr-image {
+    width: 200px;
+    margin: 15px auto;
+    display: block;
+}
+
+.account-info {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.copy-btn, .download-btn {
+    display: inline-block;
+    margin: 8px 5px;
+    padding: 10px 14px;
+    background: #1d4ed8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.copy-btn:hover, .download-btn:hover {
+    background: #163ea5;
+}
+
+.button {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    margin-top: 30px;
+    background-color: #1877f2;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #125dc1;
+}
+
+.footer {
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <img src="images/logo.png" alt="MEGAFIBER NETWORKS Logo">
+    <h1>MEGAFIBER NETWORKS</h1>
+    <p>Fast • Stable • Reliable Fiber Internet</p>
+</div>
+
+<div class="container">
+
+    <div class="notice">
+        Please settle your internet subscription to avoid service interruption.
+    </div>
+
+    <div class="payment-box">
+        <h2>GCash Payment</h2>
+        
+        <img src="images/gcash-qr.png" alt="GCash QR Code" class="qr-image" id="qrImage">
+        
+        <div class="account-info">
+            <strong>Account Name:</strong> Reynard Ampo<br>
+            <strong>GCash Number:</strong> <span id="gcashNumber">09466137531</span>
+        </div>
+
+        <button class="copy-btn" onclick="copyNumber()">Copy GCash Number</button>
+        <button class="download-btn" onclick="downloadQR()">Download QR Code</button>
+    </div>
+
+    <a href="https://www.facebook.com/messages/t/MegafiberInternetDagohoy" target="_blank" class="button">
+        Send Payment Screenshot via Messenger
+    </a>
+
+    <div class="footer">
+        After payment, please send screenshot for verification.<br>
+        © 2026 MEGAFIBER NETWORKS
+    </div>
+
+</div>
+
+<script>
+function copyNumber() {
+    const number = document.getElementById("gcashNumber").innerText;
+    navigator.clipboard.writeText(number).then(() => {
+        alert("GCash number copied!");
+    });
+}
+
+function copyNumber() {
+    const number = document.getElementById("gcashNumber").innerText;
+
+    const tempInput = document.createElement("input");
+    tempInput.value = number;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+
+    alert("GCash number copied!");
+}
+</script>
+
+</body>
+</html>
