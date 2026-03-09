@@ -140,6 +140,8 @@ body {
 
         <button class="copy-btn" onclick="copyNumber()">Copy GCash Number</button>
         <button class="download-btn" onclick="downloadQR()">Download QR Code</button>
+        
+        
     </div>
 
     <a href="https://www.facebook.com/messages/t/MegafiberInternetDagohoy" target="_blank" class="button">
@@ -156,13 +158,6 @@ body {
 <script>
 function copyNumber() {
     const number = document.getElementById("gcashNumber").innerText;
-    navigator.clipboard.writeText(number).then(() => {
-        alert("GCash number copied!");
-    });
-}
-
-function copyNumber() {
-    const number = document.getElementById("gcashNumber").innerText;
 
     const tempInput = document.createElement("input");
     tempInput.value = number;
@@ -173,7 +168,17 @@ function copyNumber() {
 
     alert("GCash number copied!");
 }
+
+    function downloadQR() {
+    const image = document.getElementById("qrImage").src;
+
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "gcash-qr.png";
+    link.click();
+}
 </script>
 
 </body>
+
 </html>
